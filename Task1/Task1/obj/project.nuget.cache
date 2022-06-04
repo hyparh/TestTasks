@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KnV6QtZtCOcrIzPiXuy3DhO6Gcog98uRbnnKccgRYzalju943jWTwsx+9mdkQjSRFRH6QAQvYOWSidMF30uADQ==",
+  "dgSpecHash": "8pu5GPtCAUfD0E8g5Qb0fksEaJJMylSwca3YZWtFyOqmUUtvGaNBSGQWtb9/zVekp1avv62DbjdgpuxQnLk5gg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hyparh\\source\\repos\\Task1\\Task1\\Task1.csproj",
+  "projectFilePath": "E:\\Repos\\TestTasks\\Task1\\Task1\\Task1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hyparh\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\hyparh\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
