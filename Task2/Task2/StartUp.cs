@@ -2,8 +2,9 @@
 string input = Console.ReadLine();
 
 decimal idr = 0;
-decimal incomeTax = 0.9m;
-decimal socialContributionsTax = 0.85m;
+decimal allTaxes = 0;
+decimal incomeTax = 0.1m;
+decimal socialContributionsTax = 0.15m;
 decimal lowTaxableAmount = 1000m;
 decimal highTaxableAmount = 3000m;
 
@@ -18,25 +19,32 @@ if (decimal.TryParse(input, out idr))
     {
         Console.WriteLine($"Your net salary is {idr:F2} IDR");
     }
-    else if (idr > lowTaxableAmount && idr <= highTaxableAmount)
+    else if (idr > lowTaxableAmount)
     {
-        idr *= incomeTax;
+        idr -= lowTaxableAmount;
 
         if (idr > lowTaxableAmount)
         {
-            idr *= socialContributionsTax;
+            allTaxes = idr * incomeTax;
         }
 
-        Console.WriteLine($"Your net salary is {idr:F2} IDR");
-    }
-    else if (idr > 0)
-    {
-        idr *= incomeTax;
+        int firstDigit = Math.Abs((int)idr);
 
-        if (idr <= highTaxableAmount)
+        while (firstDigit >= 10)
         {
-            idr *= socialContributionsTax;
+            firstDigit /= 10;
         }
+
+        string temp = firstDigit.ToString().PadRight(4, '0');
+        decimal result = Int32.Parse(temp);
+
+        if (result > lowTaxableAmount && result <= highTaxableAmount)
+        {
+            allTaxes += result * socialContributionsTax;
+        }
+
+        idr += lowTaxableAmount;
+        idr -= allTaxes;
 
         Console.WriteLine($"Your net salary is {idr:F2} IDR");
     }
